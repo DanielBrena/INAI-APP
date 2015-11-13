@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/menu_action_generar_qr"
+        android:orderInCategory="100"
+        android:title="Generar"
+        app:showAsAction="ifRoom"
+        android:icon="@drawable/icon_qr_generar"
+        />
+
+    <item
+        android:id="@+id/menu_action_guardar_plantilla"
+        android:orderInCategory="100"
+        android:title="Guardar"
+        app:showAsAction="ifRoom"
+        android:icon="@drawable/ic_save"
+        />
+
+    <item
+        android:id="@+id/menu_action_siguiente_1"
+        android:orderInCategory="100"
+        android:title="Siguiente"
+        app:showAsAction="ifRoom"
+        android:icon="@drawable/ic_send"
+        />
+</menu>

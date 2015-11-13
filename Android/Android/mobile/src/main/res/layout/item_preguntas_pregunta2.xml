@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="5dp"
+    android:background="#FFFFFF">
+
+    <TextView
+        android:width="0dp"
+        android:layout_weight="3"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:text="¿Esta es una pregunta ?"
+        android:id="@+id/pregunta"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="@color/titulo_item_calculadora"
+        android:layout_gravity="center_horizontal"
+         />
+
+    <android.support.v7.widget.SwitchCompat
+        android:padding="5dp"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="fill_parent"
+        android:text="Si"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="@color/titulo_item_calculadora"
+        android:gravity="center"
+        android:checked="true"
+        android:id="@+id/respuesta" />
+
+</LinearLayout>

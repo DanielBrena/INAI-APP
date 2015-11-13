@@ -1,0 +1,27 @@
+<ion-view view-title="Preguntas">
+    <ion-nav-buttons side="right">
+      <button class="button button-clear" ng-click="cambiarVista()">
+        <i class="icon ion-chevron-right"></i>
+      </button>
+    </ion-nav-buttons>
+  <ion-content class="padding">
+
+    <ion-list ng-repeat="pregunta in preguntas track by $index">
+		<ion-item>
+			<div class="card">
+			  <div class="item item-divider">
+			    {{pregunta.categoria}}
+			  </div>
+			  <div class="item item-text-wrap">
+			    {{pregunta.pregunta}}
+			  </div>
+			  <ion-toggle ng-change="agregar(pregunta,$index)" toggle-class="toggle-assertive" ng-model="pregunta.isChecked">
+        		Respuesta: {{pregunta.isChecked == true? "Si" :"No"}}
+    			</ion-toggle>
+			  
+			</div>
+		</ion-item>
+    </ion-list>
+  
+  </ion-content>
+</ion-view>

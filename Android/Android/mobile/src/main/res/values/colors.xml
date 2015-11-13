@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="window_background">#FFF5F5F5</color>
+
+    <color name="primaryColor">#FF3B30</color>
+    <color name="primaryDarkColor">#E42D22</color>
+    <color name="accentColor">#03A9F4</color>
+
+    <color name="titleColor">#FFFFFF</color>
+
+    <color name="titulo_item_calculadora">#464646</color>
+
+    <color name="radio_button_color_checked">#1F2033</color>
+    <color name="radio_button_color_no_checked">#FFFFFF</color>
+
+</resources>

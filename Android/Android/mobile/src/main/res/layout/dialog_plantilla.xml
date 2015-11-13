@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:padding="5dp"
+    android:layout_height="match_parent">
+
+    <EditText
+        android:layout_marginTop="20dp"
+        android:padding="5dp"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20dp"
+        android:id="@+id/dialog_dato_texto_id"
+        android:focusable="true"
+        android:gravity="center_horizontal"
+        android:layout_gravity="center_horizontal"
+        android:hint="@string/dialog_dato_texto_string"
+        android:layout_marginBottom="10dp"/>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal">
+
+        <Button
+            android:padding="5dp"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:background="@color/radio_button_color_checked"
+            android:textColor="#FFFFFF"
+            android:layout_height="wrap_content"
+            android:text="@string/dialog_dato_btn1_string"
+            android:id="@+id/dialog_dato_btn1_id" />
+
+        <Button
+            android:padding="5dp"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="@string/dialog_dato_btn2_string"
+            android:background="@color/primaryColor"
+            android:textColor="#FFFFFF"
+            android:id="@+id/dialog_dato_btn2_id"
+            android:layout_gravity="center_horizontal" />
+
+
+    </LinearLayout>
+
+</LinearLayout>

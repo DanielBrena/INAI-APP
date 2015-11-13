@@ -1,0 +1,366 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:orientation="vertical" tools:context="inai.brena.com.inaiapp.fragment.Resultado"
+    android:background="#ffffff">
+
+    <!-- TODO: Update blank fragment layout -->
+
+    <TextView
+        android:padding="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:singleLine="true"
+        android:ellipsize="marquee"
+        android:textSize="50dp"
+        android:marqueeRepeatLimit ="marquee_forever"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:scrollHorizontally="true"
+        android:text="@string/estimacion_resultado_string"
+        android:textColor="@color/primaryColor"
+        android:gravity="center_horizontal"
+        android:id="@+id/estimacion_resultado_id"
+        android:layout_gravity="center_horizontal" />
+
+    <TextView
+        android:gravity="center_horizontal"
+        android:layout_gravity="center_horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="@string/estimacion_texto_string"
+        android:id="@+id/estimacion_texto_id" />
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="30dp">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:layout_gravity="center_horizontal"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:id="@+id/imageViewEstandar" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:gravity="center_horizontal"
+                android:layout_gravity="center_horizontal"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text=""
+                android:id="@+id/textViewEstandarTitulo" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:layout_gravity="center_horizontal"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="@string/estandar_text_string"
+                android:id="@+id/textViewEstandarSubTitulo" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:layout_gravity="center_horizontal"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:id="@+id/imageViewEspecial" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:gravity="center_horizontal"
+                android:layout_gravity="center_horizontal"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text=""
+                android:id="@+id/textViewSensibleTitulo" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:layout_gravity="center_horizontal"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="@string/especial_text_string"
+                android:id="@+id/textViewSensibleSubTitulo" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:layout_gravity="center_horizontal"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:id="@+id/imageViewSensible" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:gravity="center_horizontal"
+                android:layout_gravity="center_horizontal"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text=""
+                android:id="@+id/textViewEspecialTitulo" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:layout_gravity="center_horizontal"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="@string/sensible_text_string"
+                android:id="@+id/textViewEspecialSubTitulo" />
+        </LinearLayout>
+    </LinearLayout>
+    <!--Tabla-->
+    <TableLayout
+        android:padding="10dp"
+        android:layout_marginTop="30dp"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal">
+
+
+        <TableRow
+
+            android:layout_width="fill_parent"
+
+            android:layout_height="wrap_content" >
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="2"
+                android:layout_height="wrap_content"
+                android:padding="5px"
+                android:textStyle="bold"
+                android:text="@string/tabla_titulo_1"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="@color/radio_button_color_checked"
+               />
+
+            <TextView
+                android:layout_width="0dp"
+                android:textStyle="bold"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:padding="5px"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="@string/tabla_titulo_2"
+                 />
+        </TableRow>
+        <TableRow
+
+            android:layout_width="fill_parent"
+            android:background="#f8f8f8"
+            android:layout_height="5dp" >
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="fill_parent"
+                android:layout_height="2dp"
+                android:background="#f8f8f8"
+                android:gravity="center"
+                android:layout_gravity="center_vertical">
+            </LinearLayout>
+        </TableRow>
+        <!-- Transparencia-->
+        <TableRow
+
+            android:layout_width="fill_parent"
+
+            android:layout_height="wrap_content" >
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="2"
+                android:layout_height="wrap_content"
+                android:padding="5px"
+                android:text="@string/tabla_transparencia"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="@color/radio_button_color_checked"
+                />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:padding="5px"
+                android:id="@+id/tabla_transparencia_respuesta"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                />
+        </TableRow>
+
+        <TableRow
+
+            android:layout_width="fill_parent"
+            android:background="#f8f8f8"
+            android:layout_height="5dp" >
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="fill_parent"
+                android:layout_height="2dp"
+                android:background="#f8f8f8"
+                android:gravity="center"
+                android:layout_gravity="center_vertical">
+            </LinearLayout>
+        </TableRow>
+
+        <!-- Confianza-->
+        <TableRow
+
+            android:layout_width="fill_parent"
+
+            android:layout_height="wrap_content" >
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="2"
+                android:layout_height="wrap_content"
+                android:padding="5px"
+                android:text="@string/tabla_confianza"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="@color/radio_button_color_checked"
+                />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:padding="5px"
+                android:id="@+id/tabla_confianza_respuesta"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                />
+        </TableRow>
+
+        <TableRow
+
+            android:layout_width="fill_parent"
+            android:background="#f8f8f8"
+            android:layout_height="5dp" >
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="fill_parent"
+                android:layout_height="2dp"
+                android:background="#f8f8f8"
+                android:gravity="center"
+                android:layout_gravity="center_vertical">
+            </LinearLayout>
+        </TableRow>
+
+        <!-- Control-->
+        <TableRow
+
+            android:layout_width="fill_parent"
+
+            android:layout_height="wrap_content" >
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="2"
+                android:layout_height="wrap_content"
+                android:padding="5px"
+                android:text="@string/tabla_control"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="@color/radio_button_color_checked"
+                />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:padding="5px"
+                android:id="@+id/tabla_control_respuesta"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                />
+        </TableRow>
+
+        <TableRow
+
+            android:layout_width="fill_parent"
+            android:background="#f8f8f8"
+            android:layout_height="5dp" >
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="fill_parent"
+                android:layout_height="2dp"
+                android:background="#f8f8f8"
+                android:gravity="center"
+                android:layout_gravity="center_vertical">
+            </LinearLayout>
+        </TableRow>
+
+        <!-- Valoracion-->
+        <TableRow
+
+            android:layout_width="fill_parent"
+
+            android:layout_height="wrap_content" >
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="2"
+                android:layout_height="wrap_content"
+                android:padding="5px"
+                android:text="@string/tabla_valoracion"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="@color/radio_button_color_checked"
+                />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:padding="5px"
+                android:id="@+id/tabla_valoracion_respuesta"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                />
+        </TableRow>
+
+        <TableRow
+
+            android:layout_width="fill_parent"
+            android:background="#f8f8f8"
+            android:layout_height="5dp" >
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="fill_parent"
+                android:layout_height="2dp"
+                android:background="#f8f8f8"
+                android:gravity="center"
+                android:layout_gravity="center_vertical">
+            </LinearLayout>
+        </TableRow>
+
+    </TableLayout>
+
+</LinearLayout>

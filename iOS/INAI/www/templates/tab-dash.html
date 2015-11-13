@@ -1,0 +1,31 @@
+<ion-view view-title="INAI">
+    <ion-nav-buttons side="right">
+      <button class="button button-clear" ng-click="cambiarVista()">
+        <i class="icon ion-chevron-right"></i>
+      </button>
+
+    </ion-nav-buttons>
+    
+  <ion-content class="padding">
+  <!--Inicio Busqueda-->
+    <div class="list">
+      <div class="item item-input-inset">
+        <label class="item-input-wrapper">
+          <input type="text" placeholder="Busqueda">
+        </label>
+        
+      </div>
+    </div>
+    <!--Termino busqueda-->
+    <!--Inicio Lista datos-->
+    <ion-list ng-repeat="dato in datos" >
+        
+        <ion-checkbox class="checkbox-assertive" ng-model="check"ng-click="agregar($index,dato,check)">
+          <h2>{{dato.nombre}}</h2>
+          <p>{{dato.descripcion}}</p>
+        </ion-checkbox>
+        
+    </ion-list>
+    <!--Termino Lista datos-->
+  </ion-content>
+</ion-view>

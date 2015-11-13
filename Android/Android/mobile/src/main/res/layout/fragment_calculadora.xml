@@ -1,0 +1,31 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="fill_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="inai.brena.com.inaiapp.fragment.Calculadora"
+    android:background="#ffffff">
+
+    >
+
+    <EditText
+        android:padding="5dp"
+        android:id="@+id/search"
+        android:layout_width="fill_parent"
+        android:layout_height="45dp"
+        android:inputType="textPersonName"
+
+        android:ems="10"
+        android:gravity="center"
+        android:hint="@string/calculadora_hint"
+        android:textColor="@color/primaryColor"
+        android:layout_gravity="center_horizontal">
+        <requestFocus />
+        </EditText>
+
+    <ListView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:drawSelectorOnTop="true"
+        android:id="@+id/listView_calculadora"
+        android:layout_gravity="center_horizontal|top" />
+</LinearLayout>

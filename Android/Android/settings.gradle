@@ -1,0 +1,1 @@
+include ':mobile', ':wear', ':iSpeech-SDK-1.5'

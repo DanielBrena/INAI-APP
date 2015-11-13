@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="¿Esta es una pregunta ?"
+        android:id="@+id/pregunta"
+        android:textColor="@color/radio_button_color_checked"
+        android:layout_gravity="center_horizontal" />
+
+    <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="fill_parent"
+        android:id="@+id/group_me"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="5dp">
+        <RadioButton android:id="@+id/radio_si"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="40dp"
+            android:text="Si"
+            android:gravity="center"
+            android:background="@drawable/selector_radio_btn"
+            android:button="@null"
+            android:textColor="@drawable/color_selector_radio_btn" />
+
+        <RadioButton android:id="@+id/radio_no"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="40dp"
+            android:text="No"
+            android:checked="true"
+            android:gravity="center"
+            android:background="@drawable/selector_radio_btn"
+            android:button="@null"
+            android:textColor="@drawable/color_selector_radio_btn"
+           />
+    </RadioGroup>
+</LinearLayout>

@@ -1,0 +1,48 @@
+<resources>
+    <string name="app_name">INAI</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+
+    <!-- String Menu -->
+    <string name="principal_item">Principal</string>
+    <string name="calculadora_item">Calculadora</string>
+    <string name="plantillas_item">Plantillas</string>
+    <string name="estadisticas_item">Estadisticas</string>
+    <string name="reportes_item">Reportes</string>
+    <string name="log_out_item">Cerrar Sesión</string>
+    <string name="configuracion_item">Configuración</string>
+
+<!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="check_toast">Position %1$d : %2$s</string>
+    <string name="calculadora_hint">Busca aquí el Dato</string>
+
+    <!-- String calculadora Fragment-->
+
+    <string name="estimacion_texto_string">Estimación Económica\n(Este resultado es una emulación)</string>
+    <string name="estimacion_resultado_string">$ 0.00</string>
+
+
+    <string name="dialog_calculadora_titulo_string"> Tenemos un problema </string>
+    <string name="dialog_calculadora_mensaje_string">Selecciona como mínimo un Dato.</string>
+    <string name="dialog_calculadora_btn_string"> Entiendo </string>
+
+
+    <string name="dialog_dato_texto_string"> Nombre de la plantilla </string>
+    <string name="dialog_dato_btn1_string"> Cancelar </string>
+    <string name="dialog_dato_btn2_string"> Guardar </string>
+
+    <string name="estandar_text_string"> Estándar </string>
+    <string name="especial_text_string"> Especial </string>
+    <string name="sensible_text_string"> Sensible </string>
+
+    <string name="tabla_titulo_1"> Principios </string>
+    <string name="tabla_titulo_2"> Respuesta </string>
+
+    <string name="tabla_transparencia"> Transparencia </string>
+    <string name="tabla_confianza"> Confianza </string>
+    <string name="tabla_control"> Control </string>
+    <string name="tabla_valoracion"> Valoración </string>
+</resources>
