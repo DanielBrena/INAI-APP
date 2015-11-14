@@ -19,7 +19,9 @@ Para la instalacion seguiremos los siguientes pasos.
 - Se abrirá XCODE y presionar **Run** y probar en un emulador o en el dispositivo.
 
 ####Imagenes iOS####
-![Alt text](https://photos-4.dropbox.com/t/2/AAAyCehtdHqqXulg_uappIidsyRTFQxP_rdxhFNbXxoTQw/12/103820885/png/32x32/1/_/1/2/Captura%20de%20pantalla%202015-11-13%20a%20las%208.50.55%20p.m..png/ELeXs1AYw6kCIAcoBw/5PrOHMJntj57jD5WjVpwtgEiDOyoHxBL9MrOOK1VVGk?size=1024x768&size_mode=2 "Imagen 1")
+![Imagen 1](https://github.com/DanielBrena/INAI-APP/blob/master/screenshots/ios/Pantalla_1.png "Pantalla de Inicio")
+
+
 
 
 ## Android ##
