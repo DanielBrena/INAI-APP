@@ -52,7 +52,9 @@ Para la instalacion seguiremos los siguientes pasos.
 <img src="https://github.com/DanielBrena/INAI-APP/blob/master/screenshots/android/Pantalla_10.jpg" width="30%" height="30%">
 
 ## Video ##
-<video width="600" height="400" controls="controls">
-<source src="https://www.dropbox.com/home/App%20INAI?preview=App+INAI.mp4" type="video/mp4" />
+<video width="512" height="288" controls="controls">
+<source src="https://www.dropbox.com/s/os60r63ogwfl408/your_video_here.mp4" type="video/mp4" />
 </video>
+[![Video](http://img.youtube.com/vi/VIDEO-ID/0.jpg)](https://www.dropbox.com/home/App%20INAI?preview=App+INAI.mp4)
+
 
