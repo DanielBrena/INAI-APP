@@ -19,11 +19,11 @@ Para la instalacion seguiremos los siguientes pasos.
 - Se abrirá XCODE y presionar **Run** y probar en un emulador o en el dispositivo.
 
 ####Imagenes iOS####
-<img src="https://github.com/DanielBrena/INAI-APP/blob/master/screenshots/ios/Pantalla_1.png" width="50%" height="50%">
-<img src="https://github.com/DanielBrena/INAI-APP/blob/master/screenshots/ios/Pantalla_2.png" width="50%" height="50%">
-<img src="https://github.com/DanielBrena/INAI-APP/blob/master/screenshots/ios/Pantalla_3.png" width="50%" height="50%">
-<img src="https://github.com/DanielBrena/INAI-APP/blob/master/screenshots/ios/Pantalla_4.png" width="50%" height="50%">
-<img src="https://github.com/DanielBrena/INAI-APP/blob/master/screenshots/ios/Pantalla_5.png" width="50%" height="50%">
+<img src="https://github.com/DanielBrena/INAI-APP/blob/master/screenshots/ios/Pantalla_1.png" width="30%" height="30%">
+<img src="https://github.com/DanielBrena/INAI-APP/blob/master/screenshots/ios/Pantalla_2.png" width="30%" height="30%">
+<img src="https://github.com/DanielBrena/INAI-APP/blob/master/screenshots/ios/Pantalla_3.png" width="30%" height="30%">
+<img src="https://github.com/DanielBrena/INAI-APP/blob/master/screenshots/ios/Pantalla_4.png" width="30%" height="30%">
+<img src="https://github.com/DanielBrena/INAI-APP/blob/master/screenshots/ios/Pantalla_5.png" width="30%" height="30%">
 
 
 
@@ -37,3 +37,16 @@ Para la instalacion seguiremos los siguientes pasos.
 - Buscamos el proyecto y lo abrimos en la herramienta Android Studio.
 - Actualizamos el Gradle para que se descarguen las dependencias del proyecto.
 - Presionar **Run** y emularlo o usar un dispositivo fisico para probarlo.
+
+####Imagenes Android####
+<img src="https://github.com/DanielBrena/INAI-APP/blob/master/screenshots/android/Pantalla_1.png" width="30%" height="30%">
+<img src="https://github.com/DanielBrena/INAI-APP/blob/master/screenshots/android/Pantalla_2.png" width="30%" height="30%">
+<img src="https://github.com/DanielBrena/INAI-APP/blob/master/screenshots/android/Pantalla_3.png" width="30%" height="30%">
+<img src="https://github.com/DanielBrena/INAI-APP/blob/master/screenshots/android/Pantalla_4.png" width="30%" height="30%">
+<img src="https://github.com/DanielBrena/INAI-APP/blob/master/screenshots/android/Pantalla_5.png" width="30%" height="30%">
+<img src="https://github.com/DanielBrena/INAI-APP/blob/master/screenshots/android/Pantalla_6.png" width="30%" height="30%">
+<img src="https://github.com/DanielBrena/INAI-APP/blob/master/screenshots/android/Pantalla_7.png" width="30%" height="30%">
+<img src="https://github.com/DanielBrena/INAI-APP/blob/master/screenshots/android/Pantalla_8.png" width="30%" height="30%">
+<img src="https://github.com/DanielBrena/INAI-APP/blob/master/screenshots/android/Pantalla_9.png" width="30%" height="30%">
+<img src="https://github.com/DanielBrena/INAI-APP/blob/master/screenshots/android/Pantalla_10.png" width="30%" height="30%">
+
