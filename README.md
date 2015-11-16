@@ -26,7 +26,10 @@ Para la instalacion seguiremos los siguientes pasos.
 <img src="https://github.com/DanielBrena/INAI-APP/blob/master/screenshots/ios/Pantalla_5.png" width="30%" height="30%">
 
 ####Watch OS ####
-<img src="https://github.com/DanielBrena/INAI-APP/blob/master/screenshots/watchos/Pantalla_w_1.png" width="50%" height="50%">
+<img src="https://github.com/DanielBrena/INAI-APP/blob/master/screenshots/watchos/Pantalla_w_1.png" width="30%" height="30%">
+<img src="https://github.com/DanielBrena/INAI-APP/blob/master/screenshots/watchos/Pantalla_w_2.png" width="30%" height="30%">
+<img src="https://github.com/DanielBrena/INAI-APP/blob/master/screenshots/watchos/Pantalla_w_3.png" width="30%" height="30%">
+<img src="https://github.com/DanielBrena/INAI-APP/blob/master/screenshots/watchos/Pantalla_w_4.png" width="30%" height="30%">
 
 
 
