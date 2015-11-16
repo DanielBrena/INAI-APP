@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="9059" systemVersion="15B42" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="AgC-eL-Hgc">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="9019"/>
+    </dependencies>
+    <scenes>
+        <!--INAI - Datos-->
+        <scene sceneID="aou-V4-d1y">
+            <objects>
+                <controller title="INAI - Datos" id="AgC-eL-Hgc" customClass="InterfaceControllerDatos" customModule="INAISmartWatch_Extension">
+                    <items>
+                        <group width="1" alignment="left" id="zEu-0D-PXF">
+                            <items>
+                                <button width="40" alignment="left" alpha="0.5" title="R" id="gCE-OY-PF2">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="backgroundColor" red="1" green="0.01176470588" blue="0.043137254899999998" alpha="1" colorSpace="calibratedRGB"/>
+                                    <fontDescription key="font" type="system" pointSize="15"/>
+                                    <connections>
+                                        <action selector="recargar" destination="AgC-eL-Hgc" id="4KE-g2-kQA"/>
+                                    </connections>
+                                </button>
+                                <button width="1" widthAdjustment="-40" alignment="center" title="Siguiente" id="m1Q-q7-36E">
+                                    <color key="titleColor" red="0.1215686275" green="0.12549019610000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="backgroundColor" red="0.97254901960784312" green="0.97254901960784312" blue="0.97254901960784312" alpha="1" colorSpace="calibratedRGB"/>
+                                    <connections>
+                                        <action selector="cambiarVista" destination="AgC-eL-Hgc" id="zpu-k3-dhd"/>
+                                    </connections>
+                                </button>
+                            </items>
+                        </group>
+                        <table alignment="left" id="nVJ-ra-xk2">
+                            <items>
+                                <tableRow identifier="DatoRow" id="d7I-IJ-8V9" customClass="DatoRow" customModule="INAISmartWatch_Extension">
+                                    <group key="rootItem" width="1" height="40" alignment="left" radius="1" id="pZA-aK-jkP">
+                                        <items>
+                                            <imageView width="20" height="20" alignment="left" verticalAlignment="center" image="check-empty" id="JJA-Bn-zDN"/>
+                                            <label width="1" widthAdjustment="-20" height="1" alignment="left" text="Label" textAlignment="left" numberOfLines="3" minimumScaleFactor="0.5" id="qgh-6o-79q">
+                                                <color key="textColor" red="0.1215686275" green="0.12549019610000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                <fontDescription key="font" type="system" pointSize="14"/>
+                                            </label>
+                                        </items>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </group>
+                                    <connections>
+                                        <outlet property="isChecked" destination="JJA-Bn-zDN" id="MJK-eW-oyM"/>
+                                        <outlet property="nombre" destination="qgh-6o-79q" id="UQS-ne-O2L"/>
+                                    </connections>
+                                </tableRow>
+                            </items>
+                            <color key="backgroundColor" red="0.94509803921568625" green="0.94509803921568625" blue="0.94509803921568625" alpha="1" colorSpace="calibratedRGB"/>
+                        </table>
+                    </items>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <connections>
+                        <outlet property="tableView" destination="nVJ-ra-xk2" id="0v1-yz-AQ8"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="220" y="345"/>
+        </scene>
+        <!--Preguntas-->
+        <scene sceneID="RoM-hc-kZg">
+            <objects>
+                <controller identifier="PreguntasCtrl" title="Preguntas" id="1mY-4c-le2" customClass="InterfaceControllerPregunta" customModule="INAISmartWatch_Extension">
+                    <items>
+                        <button width="1" alignment="center" title="Siguiente" id="dZT-6M-kXN">
+                            <color key="titleColor" red="0.1215686275" green="0.12549019610000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="backgroundColor" red="0.97254901960784312" green="0.97254901960784312" blue="0.97254901960784312" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="cargarResultado" destination="1mY-4c-le2" id="BVt-yL-D8q"/>
+                            </connections>
+                        </button>
+                        <table alignment="left" id="fMf-QB-Dhq">
+                            <items>
+                                <tableRow identifier="PreguntaRow" id="mt8-rV-YYu" customClass="PreguntaRow" customModule="INAISmartWatch_Extension">
+                                    <group key="rootItem" width="1" height="110" alignment="left" id="Hyb-fb-iuE">
+                                        <items>
+                                            <imageView width="20" height="20" alignment="left" verticalAlignment="center" image="check-si" id="f5z-2s-czp"/>
+                                            <label width="1" widthAdjustment="-20" height="110" alignment="left" verticalAlignment="center" text="Label asdasdadasdasd asdasdasd323112ssasd" textAlignment="left" numberOfLines="10" minimumScaleFactor="0.5" id="RkJ-l9-bsk">
+                                                <color key="textColor" red="0.1215686275" green="0.12549019610000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                <fontDescription key="font" type="system" weight="thin" pointSize="10"/>
+                                            </label>
+                                        </items>
+                                    </group>
+                                    <connections>
+                                        <outlet property="isSi" destination="f5z-2s-czp" id="Y2W-N7-Ee6"/>
+                                        <outlet property="pregunta" destination="RkJ-l9-bsk" id="cqg-sd-Tgk"/>
+                                    </connections>
+                                </tableRow>
+                            </items>
+                        </table>
+                    </items>
+                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <connections>
+                        <outlet property="tableView" destination="fMf-QB-Dhq" id="WlK-DQ-M40"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="410" y="344.25"/>
+        </scene>
+        <!--Resultado-->
+        <scene sceneID="XN7-Gq-y3C">
+            <objects>
+                <controller identifier="ResultadoCtrl" title="Resultado" id="Qiv-NF-Kao" customClass="InterfaceControllerResultado" customModule="INAISmartWatch_Extension">
+                    <items>
+                        <label alignment="center" text="Estimación Económica (Este resultado es una emulación)" textAlignment="justified" numberOfLines="5" id="9Ob-Ar-1ar">
+                            <color key="textColor" red="1" green="0.01176470588" blue="0.043137254899999998" alpha="1" colorSpace="calibratedRGB"/>
+                            <fontDescription key="font" type="system" weight="thin" pointSize="12"/>
+                        </label>
+                        <label width="1" alignment="center" text="$14834.00" textAlignment="center" minimumScaleFactor="0.5" id="5Z7-iV-neD">
+                            <color key="textColor" red="1" green="0.01176470588" blue="0.043137254899999998" alpha="1" colorSpace="calibratedRGB"/>
+                            <fontDescription key="font" style="UICTFontTextStyleBody"/>
+                        </label>
+                        <button width="1" alignment="left" verticalAlignment="bottom" title="Aceptar" id="ZKu-uU-3wc">
+                            <color key="titleColor" red="0.1215686275" green="0.12549019610000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="backgroundColor" red="0.97254901960784312" green="0.97254901960784312" blue="0.97254901960784312" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="cargarPrincipal" destination="Qiv-NF-Kao" id="jzi-4r-fQ3"/>
+                            </connections>
+                        </button>
+                    </items>
+                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <connections>
+                        <outlet property="resultado_final" destination="5Z7-iV-neD" id="2SP-Rw-mmB"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="618" y="344"/>
+        </scene>
+        <!--Static Notification Interface Controller-->
+        <scene sceneID="AEw-b0-oYE">
+            <objects>
+                <notificationController id="YCC-NB-fut">
+                    <items>
+                        <label alignment="left" text="Alert Label" id="IdU-wH-bcW"/>
+                    </items>
+                    <notificationCategory key="notificationCategory" identifier="myCategory" id="JfB-70-Muf"/>
+                    <connections>
+                        <outlet property="notificationAlertLabel" destination="IdU-wH-bcW" id="JKC-fr-R95"/>
+                        <segue destination="4sK-HA-Art" kind="relationship" relationship="dynamicNotificationInterface" id="kXh-Jw-8B1"/>
+                    </connections>
+                </notificationController>
+            </objects>
+            <point key="canvasLocation" x="220" y="643"/>
+        </scene>
+        <!--Notification Controller-->
+        <scene sceneID="ZPc-GJ-vnh">
+            <objects>
+                <controller id="4sK-HA-Art" customClass="NotificationController" customModule="INAISmartWatch" customModuleProvider="target"/>
+            </objects>
+            <point key="canvasLocation" x="468" y="643"/>
+        </scene>
+    </scenes>
+</document>
