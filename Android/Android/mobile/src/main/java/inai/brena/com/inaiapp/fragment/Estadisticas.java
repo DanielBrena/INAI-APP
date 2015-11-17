@@ -63,8 +63,8 @@ public class Estadisticas extends Fragment {
         }
 
 
-        String[] nombres = { "Datos Estandares" ,"Datos Especiales", "Datos Sensibles"};
-        float[] valores = {generarCalculo.calculo_datos_estandar(),generarCalculo.calculo_datos_especial(),generarCalculo.calculo_datos_sensible()};
+        String[] nombres = { "Datos Estandares" ,"Datos Sensibles", "Datos Especiales"};
+        float[] valores = {generarCalculo.calculo_datos_estandar(),generarCalculo.calculo_datos_sensible(),generarCalculo.calculo_datos_especial()};
 
         mChart.setUsePercentValues(true);
         mChart.setDescription("");
@@ -114,7 +114,7 @@ public class Estadisticas extends Fragment {
         PieData data = new PieData(valoresX, pieDataSet);
         data.setValueFormatter(new PercentFormatter());
         data.setValueTextSize(11f);
-        data.setValueTextColor(Color.WHITE);
+        data.setValueTextColor(getResources().getColor(R.color.color_1));
 
         mChart.setData(data);
 

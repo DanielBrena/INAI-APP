@@ -13,4 +13,12 @@
     <color name="radio_button_color_checked">#1F2033</color>
     <color name="radio_button_color_no_checked">#FFFFFF</color>
 
+    <color name="color_1">#1F2033</color>
+    <color name="color_2">#FFFFFF</color>
+    <color name="color_3">#E42D22</color>
+    <color name="color_4">#FF3B30</color>
+
+
+
+
 </resources>

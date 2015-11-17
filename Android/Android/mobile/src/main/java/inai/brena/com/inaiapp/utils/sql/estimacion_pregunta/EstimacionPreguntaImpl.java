@@ -12,5 +12,6 @@ public interface EstimacionPreguntaImpl {
     public int deleteAll();
     public int update(EstimacionPregunta estimacionPregunta);
     public List<EstimacionPregunta> selectAll();
+    public List<EstimacionPregunta>  selectByIdEstimacion(String id);
     public EstimacionPregunta selectById(String id);
 }

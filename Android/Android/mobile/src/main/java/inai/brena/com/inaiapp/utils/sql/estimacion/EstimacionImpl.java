@@ -9,8 +9,10 @@ public interface EstimacionImpl {
     public int insert(Estimacion estimacion);
     public int delete(String id);
     public int deleteAll();
+    public int deleteAllPlantilla(String id);
     public int update(Estimacion estimacion);
     public List<Estimacion> selectAll();
     public Estimacion selectById(String id);
     public List<Estimacion> selectAllByPlantilla(String tipo);
+    public List<Estimacion> selectAllByMes(String mes);
 }

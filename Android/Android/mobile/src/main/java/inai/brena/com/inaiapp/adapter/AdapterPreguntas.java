@@ -83,7 +83,7 @@ public class AdapterPreguntas extends ArrayAdapter<ItemPreguntaPreguntas> implem
                 getItem(position).setIsChecked(aSwitch2.isChecked());
 
                 if(aSwitch2.isChecked()){
-                   // preguntaSerializable.getItemPreguntaPreguntasList().add(row);
+                    // preguntaSerializable.getItemPreguntaPreguntasList().add(row);
                     //Toast.makeText(getContext(), String.valueOf(preguntaSerializable.getItemPreguntaPreguntasList().size()), Toast.LENGTH_SHORT).show();
                     aSwitch2.setText("Si");
                     aSwitch2.setTextColor(view.getResources().getColor(R.color.primaryColor));
@@ -95,16 +95,10 @@ public class AdapterPreguntas extends ArrayAdapter<ItemPreguntaPreguntas> implem
                     aSwitch2.setTextColor(view.getResources().getColor(R.color.radio_button_color_checked));
                 }
 
-                // changeBackground(CustomArrayAdapter.this.getContext(), checkBox);
                 String msg = getContext().getString(R.string.check_toast,
                         position, String.valueOf(aSwitch2.isChecked()));
-               // Toast.makeText(getContext(), msg, Toast.LENGTH_SHORT).show();
             }
         });
-        //holder.getaSwitch().setOnClickListener(this);
-
-
-        //changeBackground(getContext(), holder.getCheckBox());
 
         return convertView;
     }
@@ -127,10 +121,8 @@ public class AdapterPreguntas extends ArrayAdapter<ItemPreguntaPreguntas> implem
             aSwitch2.setTextColor(v.getResources().getColor(R.color.radio_button_color_checked));
         }
 
-        // changeBackground(CustomArrayAdapter.this.getContext(), checkBox);
         String msg = this.getContext().getString(R.string.check_toast,
                 position, String.valueOf(aSwitch2.isChecked()));
-        //Toast.makeText(this.getContext(), msg, Toast.LENGTH_SHORT).show();
     }
 
 

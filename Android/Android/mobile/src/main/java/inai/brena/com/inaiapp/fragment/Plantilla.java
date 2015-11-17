@@ -85,7 +85,6 @@ public class Plantilla extends Fragment {
         try {
             estimacionDAO.open();
             if(estimacionDAO.selectAllByPlantilla("1").size() > 0){
-                Toast.makeText(this.context,String.valueOf(estimacionDAO.selectAllByPlantilla("1").size()),Toast.LENGTH_LONG);
                 for(Estimacion estimacion : estimacionDAO.selectAllByPlantilla("1")){
                     estimacionList.add(estimacion);
                 }
@@ -95,7 +94,6 @@ public class Plantilla extends Fragment {
                     @Override
                     public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                         String id = adapterPlantilla.getOriginal().get(i).getId();
-                        Toast.makeText(context,id,Toast.LENGTH_LONG).show();
                         EstimacionDatoDAO estimacionDatoDAO = new EstimacionDatoDAO(context);
                         try {
                             estimacionDatoDAO.open();

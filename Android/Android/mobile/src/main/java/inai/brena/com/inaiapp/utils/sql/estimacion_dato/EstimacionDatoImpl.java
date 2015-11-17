@@ -14,4 +14,5 @@ public interface EstimacionDatoImpl {
     public List<EstimacionDato> selectAll();
     public EstimacionDato selectById(String id);
     public List<EstimacionDato>  selectByIdEstimacion(String id);
+    public int deleteAllEstimacion(String id);
 }

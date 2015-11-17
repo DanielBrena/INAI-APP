@@ -217,12 +217,12 @@ public class Resultado extends Fragment {
             GenerarCalculo generarCalculo = new GenerarCalculo(context,datoSerializable.getDatoList(),preguntaSerializable.getItemPreguntaPreguntasList(), configuracionDAO.selectById("1"));
             this.r = generarCalculo.resultado();
             this.r = Double.parseDouble(decim.format(this.r));
-            this.resultado.setText("$ " + this.r + "0");
+            this.resultado.setText("$ " + this.r + "0 MXN");
             this.resultado.setTextSize(TypedValue.COMPLEX_UNIT_SP, 50);
 
             this.estadar_i.setImageDrawable(this.generarImageViewNiveles("#4CAF50", "E"));
-            this.especial_i.setImageDrawable(this.generarImageViewNiveles("#FFC107", "E"));
-            this.sensible_i.setImageDrawable(this.generarImageViewNiveles("#F44336", "S"));
+            this.especial_i.setImageDrawable(this.generarImageViewNiveles("#F44336", "E"));
+            this.sensible_i.setImageDrawable(this.generarImageViewNiveles("#FFC107", "S"));
 
             this.estandar_t.setText(String.valueOf(generarCalculo.calculo_datos_estandar()));
             this.especial_t.setText(String.valueOf(generarCalculo.calculo_datos_especial()));
@@ -290,11 +290,7 @@ public class Resultado extends Fragment {
             Log.e(TAG, "Network is not available\n" + e.getStackTrace());
             Toast.makeText(this.context, "ERROR: Network is not available", Toast.LENGTH_LONG).show();
         }
-        /*HashMap<String, String> hash = new HashMap<String,String>();
-        hash.put(TextToSpeech.Engine.KEY_PARAM_STREAM,
-                String.valueOf(AudioManager.STREAM_NOTIFICATION));
-        tts.speak("Tú estimación económica es de: " +s+ " pesos",TextToSpeech.QUEUE_ADD,hash);
-*/
+
     }
     private void guardarPreguntas(Estimacion estimacion){
 

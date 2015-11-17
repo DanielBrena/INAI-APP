@@ -14,6 +14,7 @@ import inai.brena.com.inaiapp.utils.sql.estimacion.Estimacion;
 import inai.brena.com.inaiapp.utils.sql.estimacion_dato.EstimacionDato;
 import inai.brena.com.inaiapp.utils.sql.estimacion_pregunta.EstimacionPregunta;
 import inai.brena.com.inaiapp.utils.sql.pregunta.Pregunta;
+import inai.brena.com.inaiapp.utils.sql.tip.Tip;
 
 /**
  * Created by DanielBrena on 23/10/15.
@@ -35,9 +36,13 @@ public class SQLiteHelper extends SQLiteOpenHelper {
         return this;
     }
 
-
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
+
+        String tip = "create table " + Tip.TABLA + " ( "
+                + Tip.ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
+                + Tip.TITULO + " VARCHAR, "
+                + Tip.MENSAJE + " TEXT);";
 
 
         String categoria_datos = "create table " + CategoriaDatos.TABLA + " ( "
@@ -94,7 +99,7 @@ public class SQLiteHelper extends SQLiteOpenHelper {
                 + Configuracion.VALOR + " VARCHAR  )";
 
 
-
+        sqLiteDatabase.execSQL(tip);
         sqLiteDatabase.execSQL(categoria_datos);
         sqLiteDatabase.execSQL(categoria_principios);
         sqLiteDatabase.execSQL(pregunta);
@@ -136,6 +141,7 @@ public class SQLiteHelper extends SQLiteOpenHelper {
     @Override
     public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {
         sqLiteDatabase.execSQL("DROP TABLE IF EXISTS " + CategoriaDatos.TABLA);
+        sqLiteDatabase.execSQL("DROP TABLE IF EXISTS " + Tip.TABLA);
         sqLiteDatabase.execSQL("DROP TABLE IF EXISTS " + CategoriaPrincipios.TABLA);
         sqLiteDatabase.execSQL("DROP TABLE IF EXISTS " + Pregunta.TABLA);
         sqLiteDatabase.execSQL("DROP TABLE IF EXISTS " + Dato.TABLA);

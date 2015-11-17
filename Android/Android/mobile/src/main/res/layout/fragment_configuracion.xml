@@ -1,0 +1,83 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+
+    tools:context="inai.brena.com.inaiapp.fragment.Configuracion"
+    android:background="#FFFFFF">
+
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:gravity="center_horizontal"
+        android:background="@color/primaryDarkColor"
+        android:textColor="#FFFFFF"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/configuracion_titulo_1"
+        android:textStyle="bold"
+        android:id="@+id/textView"
+        android:layout_gravity="center_horizontal" />
+
+    <TextView
+        android:gravity="left"
+        android:padding="5dp"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="@string/configuracion_unidad_monetaria"
+        android:id="@+id/textView2" />
+
+    <EditText
+        android:padding="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:id="@+id/conf_unidad_monetaria_id"
+        android:layout_gravity="center_horizontal"
+        android:numeric="integer" />
+
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:gravity="center_horizontal"
+        android:background="@color/primaryDarkColor"
+        android:textColor="#FFFFFF"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/configuracion_titulo_2"
+        android:textStyle="bold"
+        android:id="@+id/configuracion_txt_plantilla"
+        android:layout_gravity="center_horizontal" />
+
+    <Button
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/configuracion_btn_eliminar"
+        android:id="@+id/conf_btn_eliminar_plantillas"
+        android:textColor="@color/color_1"
+        android:background="@color/color_2"
+        android:layout_gravity="center_horizontal" />
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:gravity="center_horizontal"
+        android:background="@color/primaryDarkColor"
+        android:textColor="#FFFFFF"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/configuracion_titulo_3"
+        android:textStyle="bold"
+        android:id="@+id/configuracion_txt_tips"
+        android:layout_gravity="center_horizontal" />
+
+    <Switch
+        android:padding="5dp"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/configuracion_switch"
+        android:id="@+id/conf_switch_tips"
+        android:textColor="@color/color_1"
+        android:layout_gravity="center_horizontal" />
+
+</LinearLayout>

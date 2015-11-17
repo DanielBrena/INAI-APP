@@ -15,6 +15,7 @@
         android:inputType="textPersonName"
 
         android:ems="10"
+        android:textSize="12dp"
         android:gravity="center"
         android:hint="@string/calculadora_hint"
         android:textColor="@color/primaryColor"

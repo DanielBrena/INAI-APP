@@ -1,6 +1,15 @@
 package inai.brena.com.inaiapp;
 
+import android.app.AlertDialog;
+import android.content.Intent;
 import android.util.Log;
+import android.view.Gravity;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.widget.ImageButton;
+import android.widget.ImageView;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import java.sql.SQLException;
 
@@ -21,6 +30,8 @@ import inai.brena.com.inaiapp.utils.sql.estimacion_pregunta.EstimacionPreguntaDA
 import inai.brena.com.inaiapp.utils.sql.preference.MyPreference;
 import inai.brena.com.inaiapp.utils.sql.pregunta.Pregunta;
 import inai.brena.com.inaiapp.utils.sql.pregunta.PreguntaDAO;
+import inai.brena.com.inaiapp.utils.sql.tip.Tip;
+import inai.brena.com.inaiapp.utils.sql.tip.TipDAO;
 
 
 /**
@@ -39,19 +50,51 @@ public class Aplicacion extends android.app.Application {
             this.cargar_datos();
             this.carga_categoria2();
             this.carga_preguntas();
+            this.cargar_tips();
             MyPreference.add(getApplicationContext(), "datos_precargados", "si");
 
         }
 
-
-
-
     }
+
+    private void mostrar2(){
+        EstimacionDAO estimacionDAO = new EstimacionDAO(getApplicationContext());
+        try {
+            estimacionDAO.open();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void cargar_tips(){
+        TipDAO tipDAO = new TipDAO(getApplicationContext());
+        try {
+            tipDAO.open();
+            tipDAO.insert(new Tip("1", "Tip de seguridad", "Tú nombre de usuario no debe proveer información que delate las características personales del usuario tales como nombre o edad."));
+            tipDAO.insert(new Tip("2","Tip de seguridad","Recuerda siempre cerrar la sesión en Internet, ya sea de correo electrónico, redes sociales, de mensajería, etc. "));
+            tipDAO.insert(new Tip("3","Tip de seguridad","Verifica que tus sistemas de antivirus se encuentren actualizados. "));
+            tipDAO.insert(new Tip("4","Tip de seguridad","Navega y baja contenidos únicamente de sitios de confianza. "));
+            tipDAO.insert(new Tip("5","Tip de seguridad","No confies en desconocidos, aún cuando supongan que mantienen el anonimato. Rechaza videoconferencias, envío de información o fotos, descarga de archivos y por supuesto, encuentros personales."));
+            tipDAO.insert(new Tip("6","Tip de seguridad","Publicar datos o imágenes de la zona donde se habita, dirección, teléfono puede implicar grandes riesgos de seguridad."));
+            tipDAO.insert(new Tip("7","Tip de seguridad","Lo más adecuado es usar tu Smartphone o tablet y no computadoras públicas para hacer compras en Internet. De esta manera, nadie más podrá tener acceso a los datos que ingreses."));
+            tipDAO.insert(new Tip("8","Tip de seguridad","Cuando reserves en línea algún hotel o tour, busca un sitio web reconocido con algún certificado de seguridad que garantice el manejo apropiado de tu información sensible a través de su aviso de privacidad."));
+            tipDAO.insert(new Tip("9","Tip de seguridad","Las claves más seguras deben ser largas y combinar números, letras y caracteres."));
+            tipDAO.insert(new Tip("10","Tip de seguridad","Nunca utilices wifis gratuitas o el whatsapp para enviar información o documentos confidenciales."));
+            tipDAO.insert(new Tip("11","Tip de seguridad","No descargues apps 'porque sí' en tu Smarthphone si no quieres regalar tus datos, además de ocupar espacio, muchas tienen permisos excesivos."));
+            tipDAO.insert(new Tip("12","Tip de seguridad","Realiza frecuentemente copias de seguridad de los datos que se guardan en los dispositivos que utilizas."));
+            tipDAO.insert(new Tip("13","Tip de seguridad","No utilices los pendrives que te encuentres en la calle, puedes propagar un malware."));
+            tipDAO.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
     private void carga_configuracion(){
         ConfiguracionDAO configuracionDAO = new ConfiguracionDAO(getApplicationContext());
         try {
             configuracionDAO.open();
-            configuracionDAO.insert(new Configuracion("1","unidad_monetaria","150"));
+            configuracionDAO.insert(new Configuracion("1", "unidad_monetaria", "150"));
+            configuracionDAO.insert(new Configuracion("2","tips_seguridad","true"));
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -101,11 +144,11 @@ public class Aplicacion extends android.app.Application {
         try {
             CategoriaDatosDAO categoriaDatos = new CategoriaDatosDAO(getApplicationContext());
             categoriaDatos.open();
-            categoriaDatos.insert(new CategoriaDatos("1", "Nivel estandar", "Esta categoría considera información de identificación, contacto datos laborales y académicos de una persona física identificada o identificable.","#4CAF50", "1"));
+            categoriaDatos.insert(new CategoriaDatos("1", "Nivel estandar", "Esta categoría considera información de identificación, contacto datos laborales y académicos de una persona física identificada o identificable.", "#4CAF50", "1"));
             categoriaDatos.open();
-            categoriaDatos.insert(new CategoriaDatos("2", "Nivel sensible", "Esta categoría contempla los datos que permiten conocer la ubicación física de la persona, tales como la dirección física e información relativa al tránsito de las personas dentro y fuera del país.","#F44336", "2"));
+            categoriaDatos.insert(new CategoriaDatos("2", "Nivel sensible", "Esta categoría contempla los datos que permiten conocer la ubicación física de la persona, tales como la dirección física e información relativa al tránsito de las personas dentro y fuera del país.", "#FFC107", "2"));
             categoriaDatos.open();
-            categoriaDatos.insert(new CategoriaDatos("3", "Nivel especial", "Esta categoría corresponde a los datos cuya propia naturaleza, o bien debido a un cambio excepcional en el contexto de las operaciones usuales de la organización, pueden causar daño directo al patrimonio o seguridad de los titulares.","#FFC107", "3"));
+            categoriaDatos.insert(new CategoriaDatos("3", "Nivel especial", "Esta categoría corresponde a los datos cuya propia naturaleza, o bien debido a un cambio excepcional en el contexto de las operaciones usuales de la organización, pueden causar daño directo al patrimonio o seguridad de los titulares.","#F44336", "3"));
 //            categoriaDatos.close();
         } catch (SQLException e) {
             e.printStackTrace();
@@ -265,4 +308,6 @@ public class Aplicacion extends android.app.Application {
         }
 
     }
+
+
 }

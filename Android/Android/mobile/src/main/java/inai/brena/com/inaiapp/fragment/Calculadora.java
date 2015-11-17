@@ -29,6 +29,7 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -246,23 +247,31 @@ public class Calculadora extends Fragment {
         View v = inflater.inflate(R.layout.dialog_qr, null);
         ImageView imageViewQr = (ImageView)v.findViewById(R.id.qr);
 
+        ImageButton button = (ImageButton)v.findViewById(R.id.qr_share);
+
         try {
             Bitmap bitmap = encodeAsBitmap(codigo);
             imageViewQr.setImageBitmap(bitmap);
 
             File mFile = savebitmap(bitmap);
 
-            Uri u = null;
-            u = Uri.fromFile(mFile);
+            final Uri u = Uri.fromFile(mFile);
 
-            Intent emailIntent = new Intent(Intent.ACTION_SEND);
-            emailIntent.setType("image/*");
-            emailIntent.putExtra(Intent.EXTRA_SUBJECT, "Código QR");
-            // + "\n\r" + "\n\r" +
-            // feed.get(Selectedposition).DETAIL_OBJECT.IMG_URL
-            emailIntent.putExtra(Intent.EXTRA_TEXT, "Tú texto aquí");
-            emailIntent.putExtra(Intent.EXTRA_STREAM, u);
-            startActivity(Intent.createChooser(emailIntent, "Enviando correo..."));
+            button.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent emailIntent = new Intent(Intent.ACTION_SEND);
+                    emailIntent.setType("image/*");
+                    emailIntent.putExtra(Intent.EXTRA_SUBJECT, "Código QR");
+                    // + "\n\r" + "\n\r" +
+                    // feed.get(Selectedposition).DETAIL_OBJECT.IMG_URL
+                    emailIntent.putExtra(Intent.EXTRA_TEXT, "Tú texto aquí");
+                    emailIntent.putExtra(Intent.EXTRA_STREAM, u);
+                    startActivity(Intent.createChooser(emailIntent, "Enviando correo..."));
+                }
+            });
+
+
         } catch (WriterException e) {
             e.printStackTrace();
         }
@@ -405,11 +414,7 @@ public class Calculadora extends Fragment {
 
         this.dialogQr = this.crearDialogQr(gson_list);
         this.dialogQr.show();
-/*
-        Gson gson2 = new Gson();
-        Type collectionType = new TypeToken<List<Dato>>() {}.getType();
 
-        List<Dato> navigation = gson2.fromJson(gson_list, collectionType);*/
     }
 
 

@@ -1,5 +1,6 @@
 package inai.brena.com.inaiapp;
 
+import android.app.AlertDialog;
 import android.content.Intent;
 import android.os.Handler;
 import android.support.design.widget.NavigationView;
@@ -14,8 +15,13 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.view.Gravity;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -23,18 +29,25 @@ import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
 import java.lang.reflect.Type;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 import inai.brena.com.inaiapp.fragment.Calculadora;
+import inai.brena.com.inaiapp.fragment.ConfiguracionF;
 import inai.brena.com.inaiapp.fragment.Estadisticas;
 import inai.brena.com.inaiapp.fragment.Plantilla;
 import inai.brena.com.inaiapp.fragment.Principal;
 import inai.brena.com.inaiapp.google.zxing.integration.android.IntentIntegrator;
 import inai.brena.com.inaiapp.google.zxing.integration.android.IntentResult;
 import inai.brena.com.inaiapp.serializable.DatoSerializable;
+import inai.brena.com.inaiapp.utils.sql.configuracion.Configuracion;
+import inai.brena.com.inaiapp.utils.sql.configuracion.ConfiguracionDAO;
 import inai.brena.com.inaiapp.utils.sql.dato.Dato;
 import inai.brena.com.inaiapp.utils.sql.dato.DatoDAO;
+import inai.brena.com.inaiapp.utils.sql.tip.Tip;
+import inai.brena.com.inaiapp.utils.sql.tip.TipDAO;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -47,8 +60,11 @@ public class MainActivity extends AppCompatActivity {
     private Principal principal;
     private Plantilla plantilla;
     private Estadisticas estadisticas;
+    private ConfiguracionF configuracion;
 
     private FragmentManager fragmentManager;
+
+    private AlertDialog alertDialogTip;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -66,8 +82,38 @@ public class MainActivity extends AppCompatActivity {
             prepararDrawer(navigationView);
 
         }
-
+        cargarDialog();
         textView_title.setText(getResources().getString(R.string.app_name).toString());
+    }
+
+
+    private void cargarDialog(){
+        ConfiguracionDAO configuracionDAO = new ConfiguracionDAO(this);
+        try {
+            configuracionDAO.open();
+            Configuracion configuracion = configuracionDAO.selectById("2");
+
+            if( Boolean.parseBoolean(configuracion.getValor())){
+                TipDAO tipDAO = new TipDAO(this);
+                tipDAO.open();
+                List<Tip> tipList = tipDAO.selectAll();
+                int n = randInt(0,tipList.size());
+                this.alertDialogTip = crearDialogAlerta(tipList.get(n).getMensaje());
+                this.alertDialogTip.show();
+
+
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+    private  int randInt(int min, int max) {
+
+        Random rand = new Random();
+        int randomNum = rand.nextInt((max - min) ) + min;
+
+        return randomNum;
     }
 
 
@@ -123,6 +169,7 @@ public class MainActivity extends AppCompatActivity {
         this.principal = new Principal();
         this.plantilla = new Plantilla();
         this.estadisticas = new Estadisticas();
+        this.configuracion = new ConfiguracionF();
     }
 
     private void seleccionarItem(MenuItem itemDrawer) {
@@ -140,6 +187,9 @@ public class MainActivity extends AppCompatActivity {
                 break;
             case R.id.nav_estadisticas:
                 fragmentoGenerico = estadisticas;
+                break;
+            case R.id.nav_configuracion:
+                fragmentoGenerico = configuracion;
                 break;
 
         }
@@ -222,6 +272,47 @@ public class MainActivity extends AppCompatActivity {
     public boolean onCreateOptionsMenu(Menu menu) {
 
         return super.onCreateOptionsMenu(menu);
+    }
+
+    private AlertDialog crearDialogAlerta(String mensaje){
+        final String mensaje_final = mensaje;
+        final AlertDialog.Builder builder= new AlertDialog.Builder(this);
+        LayoutInflater inflater = this.getLayoutInflater();
+        TextView title = new TextView(this);
+        title.setText("Tips de seguridad");
+        title.setBackgroundColor(getResources().getColor(R.color.color_2));
+        title.setPadding(10, 10, 10, 10);
+        title.setGravity(Gravity.CENTER);
+        title.setTextColor(getResources().getColor(R.color.color_1));
+        title.setTextSize(20);
+
+        builder.setCustomTitle(title);
+        View v = inflater.inflate(R.layout.dialog_tip, null);
+        ImageButton imageButton = (ImageButton)v.findViewById(R.id.tip_btn);
+        ImageView imageView = (ImageView)v.findViewById(R.id.tip_cerrar);
+        imageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dismissAlerta();
+            }
+        });
+        TextView textView = (TextView)v.findViewById(R.id.tip_id);
+        textView.setText(mensaje);
+        imageButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent sharingIntent = new Intent(android.content.Intent.ACTION_SEND);
+                sharingIntent.setType("text/plain");
+                sharingIntent.putExtra(android.content.Intent.EXTRA_SUBJECT, "Tip de seguridad de datos ");
+                sharingIntent.putExtra(android.content.Intent.EXTRA_TEXT, mensaje_final);
+                startActivity(Intent.createChooser(sharingIntent, getResources().getString(R.string.share_using)));
+            }
+        });
+        builder.setView(v);
+        return builder.create();
+    }
+    private void dismissAlerta(){
+        this.alertDialogTip.dismiss();
     }
 
 

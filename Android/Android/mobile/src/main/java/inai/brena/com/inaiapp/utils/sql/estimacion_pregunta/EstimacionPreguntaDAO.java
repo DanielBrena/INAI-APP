@@ -169,6 +169,37 @@ public class EstimacionPreguntaDAO extends SQLiteHelper implements EstimacionPre
     }
 
     @Override
+    public List<EstimacionPregunta> selectByIdEstimacion(String id) {
+        Cursor cursor = super.getDatabase().query(EstimacionPregunta.TABLA, null, EstimacionPregunta.ESTIMACION + " = ?", new String[]{
+                id
+        }, null, null, null);
+        List<EstimacionPregunta> estimacionPreguntaList = new ArrayList<>();
+        EstimacionPregunta estimacionPregunta = null;
+        if (cursor.getCount() > 0) {
+            try {
+                PreguntaDAO preguntaDAO = new PreguntaDAO(super.getContext());
+                preguntaDAO.open();
+                EstimacionDAO estimacionDAO = new EstimacionDAO(super.getContext());
+                estimacionDAO.open();
+                for (int i = 0; i < cursor.getCount(); i++) {
+                    cursor.moveToNext();
+                    estimacionPregunta = new EstimacionPregunta();
+                    estimacionPregunta.setId(cursor.getString(0));
+                    estimacionPregunta.setEstimacion(estimacionDAO.selectById(cursor.getString(1)));
+                    estimacionPregunta.setPregunta(preguntaDAO.selectById(cursor.getString(2)));
+                    estimacionPregunta.setRespuesta(cursor.getString(3));
+                    estimacionPreguntaList.add(estimacionPregunta);
+                }
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+        cursor.close();
+        //this.close();
+        return estimacionPreguntaList;
+    }
+
+    @Override
     public void close() {
         super.close();
     }

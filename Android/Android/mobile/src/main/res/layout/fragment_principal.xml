@@ -1,7 +1,55 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
-    android:layout_height="match_parent" tools:context="inai.brena.com.inaiapp.fragment.Principal">
+    android:layout_height="match_parent" android:orientation="vertical" tools:context="inai.brena.com.inaiapp.fragment.Principal"
+    android:background="#FFFFFF">
 
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/principal_titulo"
+        android:id="@+id/principal_titulo_id"
+        android:textColor="@color/color_1"
+        android:layout_gravity="center_horizontal" />
 
-</RelativeLayout>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_gravity="center_horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:src="@drawable/ic_event_available"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="20dp"
+            android:id="@+id/imageView2" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="3"
+            android:textColor="@color/color_1"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="Small Text"
+            android:id="@+id/principal_fecha_id"
+            android:layout_gravity="center_horizontal" />
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:singleLine="true"
+        android:ellipsize="marquee"
+        android:textSize="50dp"
+        android:marqueeRepeatLimit ="marquee_forever"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:scrollHorizontally="true"
+        android:text="@string/estimacion_resultado_string"
+        android:textColor="@color/primaryColor"
+        android:gravity="center_horizontal"
+        android:id="@+id/principa_total_id"
+        android:layout_gravity="center_horizontal" />
+</LinearLayout>

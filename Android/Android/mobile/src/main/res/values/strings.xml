@@ -17,7 +17,7 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
     <string name="check_toast">Position %1$d : %2$s</string>
-    <string name="calculadora_hint">Busca aquí el Dato</string>
+    <string name="calculadora_hint">Dato o Categoría (Estandar,Sensible y Especial)</string>
 
     <!-- String calculadora Fragment-->
 
@@ -45,4 +45,20 @@
     <string name="tabla_confianza"> Confianza </string>
     <string name="tabla_control"> Control </string>
     <string name="tabla_valoracion"> Valoración </string>
+
+
+    <string name="configuracion_titulo_1"> Calculadora </string>
+    <string name="configuracion_unidad_monetaria"> Unidad monetaría </string>
+
+    <string name="configuracion_titulo_2"> Plantillas </string>
+    <string name="configuracion_btn_eliminar"> Eliminar plantillas </string>
+
+    <string name="configuracion_titulo_3"> Tips de seguridad </string>
+    <string name="configuracion_switch"> Mostrar tips </string>
+
+    <string name="share_using"> Comparte el tip con tus amigos </string>
+
+    <string name="principal_titulo"> Total</string>
+
+
 </resources>

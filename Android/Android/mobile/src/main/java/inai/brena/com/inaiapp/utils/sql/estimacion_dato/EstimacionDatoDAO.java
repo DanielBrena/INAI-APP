@@ -188,6 +188,15 @@ public class EstimacionDatoDAO extends SQLiteHelper implements EstimacionDatoImp
         return estimacionDatoList;
     }
 
+    @Override
+    public int deleteAllEstimacion(String id) {
+        int resultado = super.getDatabase().delete(EstimacionDato.TABLA, EstimacionDato.ESTIMACION + " = ?", new String[]{
+                id
+        });
+        //this.close();
+        return resultado;
+    }
+
 
     @Override
     public void close() {

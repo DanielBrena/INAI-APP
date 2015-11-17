@@ -67,6 +67,15 @@ public class EstimacionDAO extends SQLiteHelper implements EstimacionImpl {
         return resultado;
     }
 
+    @Override
+    public int deleteAllPlantilla(String id) {
+        int resultado = super.getDatabase().delete(Estimacion.TABLA, Estimacion.PLANTILLA + " = ?", new String[]{
+                id
+        });
+        this.close();
+        return resultado;
+    }
+
     /**
      *
      * @param estimacion
@@ -161,6 +170,29 @@ public class EstimacionDAO extends SQLiteHelper implements EstimacionImpl {
         cursor.close();
         //this.close();
         return estimacion;
+    }
+
+    @Override
+    public List<Estimacion> selectAllByMes(String mes) {
+        Cursor cursor = super.getDatabase().rawQuery("SELECT * FROM estimacion WHERE strftime('%m', est_fecha) = ? and est_plantilla = '0'",new String[]{
+            mes
+        });
+        List<Estimacion> estimacionList = new ArrayList<>();
+        Estimacion estimacion = null;
+        if (cursor.getCount() > 0) {
+            for (int i = 0; i < cursor.getCount(); i++) {
+                cursor.moveToNext();
+                estimacion = new Estimacion();
+                estimacion.setId(cursor.getString(0));
+                estimacion.setNombre(cursor.getString(1));
+                estimacion.setFecha(cursor.getString(2));
+                estimacion.setPlantilla(cursor.getString(3));
+                estimacionList.add(estimacion);
+            }
+        }
+        cursor.close();
+        //this.close();
+        return estimacionList;
     }
 
     @Override
